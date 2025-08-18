@@ -1,0 +1,213 @@
+.whole {
+    height: 674px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.whole h1 {
+    font-size: clamp(28px, 5vw, 60px);
+}
+
+.whole h1 span {
+    color: #FF8C28;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 56px - 3rem);
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.skills div {
+    margin: 10px;
+}
+
+.up,
+.down {
+    display: flex;
+    flex: 1;
+}
+
+.up > div,
+.down > div {
+    flex: 1;
+}
+
+.programming,
+.webDev,
+.database,
+.photography {
+    width: 100%;
+    height: 100%;
+    background-image: url('../photos/programming.JPG');
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.webDev {
+    background-image: url('../photos/webDev.JPG');
+}
+
+.database {
+    background-image: url('../photos/database.JPG');
+}
+
+.photography {
+    background-image: url('../photos/photography.JPG');
+}
+
+.programming::after,
+.webDev::after,
+.database::after,
+.photography::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../photos/gradient.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-in, background-size 0.5s ease-in-out;
+}
+
+.programming:hover::after,
+.webDev:hover::after,
+.database:hover::after,
+.photography:hover::after {
+    opacity: 0.7;
+    background-size: 110%;
+}
+
+.programming h1,
+.programming > p,
+.webDev h1,
+.webDev > p,
+.database h1,
+.database > p,
+.photography h1,
+.photography > p {
+    display: none;
+    color: #f6f1ec;
+    text-shadow: #2C2C2C;
+    font-family: 'poppins';
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.programming h1,
+.webDev h1,
+.database h1,
+.photography h1 {
+    font-size: clamp(1rem, 2vw, 2rem);
+    margin-bottom: 5px;
+    color: #FF8C28;
+}
+
+.programming p,
+.webDev p,
+.database p,
+.photography p {
+    font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+    margin-top: 0;
+}
+
+.programming:hover > h1,
+.programming:hover > p,
+.webDev:hover > h1,
+.webDev:hover > p,
+.database:hover > h1,
+.database:hover > p,
+.photography:hover > h1,
+.photography:hover > p {
+    display: block;
+}
+
+.programming:hover > h1,
+.webDev:hover > h1,
+.database:hover > h1,
+.photography:hover > h1 {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+.programming:hover > p,
+.webDev:hover > p,
+.database:hover > p,
+.photography:hover > p {
+    font-size: 14px;
+    font-weight: 200;
+}
+
+@media (max-width: 1100px) {
+    .whole {
+        height: calc(100vh - 56px);
+    }
+
+    .skills {
+        width: 90%;
+    }
+}
+
+@media (max-width: 576px) {
+    .whole {
+        height: calc(100vh - 56px);
+    }
+
+    .skills {
+        width: 80%;
+        height: 90%;
+        margin-bottom: 10px;
+    }
+
+    .skills div {
+        margin: 0px;
+    }
+
+    .up div,
+    .down div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .up,
+    .down {
+        flex-direction: column;
+        padding: 0%;
+    }
+
+    .programming:hover > h1,
+    .webDev:hover > h1,
+    .database:hover > h1,
+    .photography:hover > h1 {
+        font-weight: 900;
+        font-size: 22px;
+    }
+
+    .programming:hover > p,
+    .webDev:hover > p,
+    .database:hover > p,
+    .photography:hover > p {
+        font-size: 10px;
+        font-weight: 200;
+    }
+}
